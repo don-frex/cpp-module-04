@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:39:35 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/20 23:55:52 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 00:03:21 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 	delete tmp_cure;
 	tmp_cure = NULL;
 	delete bob;
-	delete me;
+	delete me;// << here is an error!! use while(1){} before and after
 	delete src;
 	return 0;
 }
