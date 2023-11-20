@@ -1,50 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:51:15 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:06:52 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/18 18:04:41 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/18 19:18:17 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog(void)
+Animal::Animal(void)
 {
-	this->brain = new Brain();
-	this->type = "Dog";
+	this->type = "Animal";
 	std::cout << "define " << type << " default constructor\n";
 }
 
-Dog::Dog(const Dog& other)
+Animal::Animal(const Animal& other)
 {
 	*this = other;
 	std::cout << "define default constructor\n";
 	return;
 }
 
-Dog& Dog::operator = (const Dog& other)
+Animal& Animal::operator = (const Animal& other)
 {
 	this->type = other.type;
 	std::cout << type << "operstor called\n";
 	return(*this);
 }
 
-Dog::~Dog(void)
+Animal::~Animal(void)
 {
-	delete this->brain;
 	std::cout << "define deconstructor\n";
 }
 
-void	Dog::makeSound(void) const
+void	Animal::makeSound(void) const
 {
-	std::cout << "howhow\n";
+	std::cout << "Animal make sound\n";
 }
 
-std::string	Dog::getType(void) const
+std::string	Animal::getType(void) const
 {
 	return (this->type);
 }

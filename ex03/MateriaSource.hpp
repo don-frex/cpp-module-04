@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 17:56:10 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:06:08 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/19 23:55:59 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/20 20:00:31 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+# include <string>
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class Dog : public Animal
+class MateriaSource: public IMateriaSource
 {
 	private:
-		Brain *brain;
+		AMateria* _materia[4];
 	public:
-		Dog(void);
-		Dog(const Dog& other);
-		Dog& operator = (const Dog& other);
-		~Dog(void);
-		void	makeSound(void) const;
-		std::string	getType(void) const;
+		MateriaSource();
+		MateriaSource(MateriaSource const & src);
+		virtual ~MateriaSource();
+		MateriaSource & operator=(MateriaSource const & rhs);
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

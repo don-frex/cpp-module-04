@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:55:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:11:12 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/18 10:15:51 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/19 23:07:22 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include <iostream>
 
-int main()
+class Animal
 {
-	Animal *animals[10];
+	protected:
+		std::string type;
+	public:
+		Animal(void);
+		Animal(const Animal& other);
+		Animal& operator = (const Animal& other);
+		virtual ~Animal(void);
+		virtual void	makeSound(void) const = 0;
+		std::string	getType(void) const;
+};
 
-	for (int i = 0; i < 5; i++)
-		animals[i] = new Dog();
-	for (int i = 5; i < 10; i++)
-		animals[i] = new Cat();
-	// for (int i = 0; i < 10; i++)
-	// 	delete animals[i];
-	
-}
+#endif

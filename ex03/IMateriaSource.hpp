@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:55:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:11:12 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/19 23:54:49 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/20 20:03:43 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iostream>
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-int main()
+class AMateria;
+
+class IMateriaSource
 {
-	Animal *animals[10];
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-	for (int i = 0; i < 5; i++)
-		animals[i] = new Dog();
-	for (int i = 5; i < 10; i++)
-		animals[i] = new Cat();
-	// for (int i = 0; i < 10; i++)
-	// 	delete animals[i];
-	
-}
+#endif

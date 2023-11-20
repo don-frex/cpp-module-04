@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:55:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:11:12 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/19 23:53:34 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/20 19:28:27 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iostream>
+#ifndef ICE_HPP
+# define ICE_HPP
 
-int main()
+# include "AMateria.hpp"
+# include "Character.hpp"
+
+class Ice: public AMateria
 {
-	Animal *animals[10];
+	public:
+		Ice();
+		Ice(Ice const & src);
+		virtual ~Ice();
+		Ice & operator=(Ice const & rhs);
+		AMateria* clone() const;
+		void use(ICharacter& target);
+};
 
-	for (int i = 0; i < 5; i++)
-		animals[i] = new Dog();
-	for (int i = 5; i < 10; i++)
-		animals[i] = new Cat();
-	// for (int i = 0; i < 10; i++)
-	// 	delete animals[i];
-	
-}
+#endif

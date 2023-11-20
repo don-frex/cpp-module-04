@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:55:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:11:12 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/19 23:08:52 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include <iostream>
+
 
 int main()
 {
@@ -23,7 +24,7 @@ int main()
 		animals[i] = new Dog();
 	for (int i = 5; i < 10; i++)
 		animals[i] = new Cat();
-	// for (int i = 0; i < 10; i++)
-	// 	delete animals[i];
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 	
 }
