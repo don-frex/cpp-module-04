@@ -6,15 +6,15 @@
 #    By: asaber <asaber@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/19 23:58:32 by asaber            #+#    #+#              #
-#    Updated: 2023/11/20 22:23:29 by asaber           ###   ########.fr        #
+#    Updated: 2023/11/21 00:46:18 by asaber           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Abstract
+NAME = AMateria
 SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 all: $(NAME)
 $(NAME): $(OBJ)

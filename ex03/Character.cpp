@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:44:24 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/20 23:55:01 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 00:22:38 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void Character::equip(AMateria* m)
 		{
 			if (!this->_inventory[i])
 			{
-				this->_inventory[i] = m;
+				this->_inventory[i] = m->clone();
 				break;
 			}
 		}

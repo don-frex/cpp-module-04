@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:39:35 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 00:03:21 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 01:06:05 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,21 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	ICharacter* me = new Character("me");
-	ICharacter* bob = new Character("bob");
-	AMateria* tmp_ice = NULL;
-	AMateria* tmp_cure = NULL;
-	
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	tmp_ice = src->createMateria("ice");
-	me->equip(tmp_ice);
-	tmp_cure = src->createMateria("cure");
-	me->equip(tmp_cure);
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
-	me->unequip(0);
-	me->unequip(1);
-	delete tmp_ice;
-	tmp_ice = NULL;
-	delete tmp_cure;
-	tmp_cure = NULL;
 	delete bob;
-	delete me;// << here is an error!! use while(1){} before and after
+	delete me;
 	delete src;
+	//system("leaks AMateria");
 	return 0;
 }
 
