@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:39:35 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 01:06:05 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:02:17 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include "MateriaSource.hpp"
 
 
-int main()
+void	test()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -33,10 +33,15 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
-	delete bob;
 	delete me;
 	delete src;
-	//system("leaks AMateria");
+	delete bob;
+}
+
+int main()
+{
+	test();
+	system("leaks AMateria");
 	return 0;
 }
 

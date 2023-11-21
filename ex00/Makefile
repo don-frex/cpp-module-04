@@ -6,12 +6,12 @@
 #    By: asaber <asaber@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 18:56:00 by asaber            #+#    #+#              #
-#    Updated: 2023/11/18 19:44:32 by asaber           ###   ########.fr        #
+#    Updated: 2023/11/21 13:47:10 by asaber           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Polymorphism
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98

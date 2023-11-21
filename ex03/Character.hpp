@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:43:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/20 19:09:11 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:05:54 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character: public ICharacter
 	private:
 		std::string _name;
 		AMateria *_inventory[4];
-		AMateria *floor[4];
+		AMateria *unequiped[4];
 	public:
 		Character(void);
 		Character(std::string const & name);

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:56:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/20 23:42:30 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:25:42 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void MateriaSource::learnMateria(AMateria *m)
 			break;
 		}
 	}
-	//delete m;
+	delete m;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:04:41 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/18 19:18:17 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:43:28 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ Animal::Animal(void)
 Animal::Animal(const Animal& other)
 {
 	*this = other;
-	std::cout << "define default constructor\n";
+	std::cout << "define Animal copy constructor\n";
 	return;
 }
 
 Animal& Animal::operator = (const Animal& other)
 {
 	this->type = other.type;
-	std::cout << type << "operstor called\n";
+	std::cout << type << "operator called\n";
 	return(*this);
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "define deconstructor\n";
+	std::cout << "define Animal deconstructor\n";
 }
 
 void	Animal::makeSound(void) const

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:54:40 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/19 18:06:59 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 11:47:22 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void)
 Cat::Cat(const Cat& other)
 {
 	*this = other;
-	std::cout << "define default constructor\n";
+	std::cout << "define copy constructor\n";
 	return;
 }
 

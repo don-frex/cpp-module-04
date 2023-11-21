@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:51:15 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 01:50:29 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 11:47:30 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog(void)
 Dog::Dog(const Dog& other)
 {
 	*this = other;
-	std::cout << "define default constructor\n";
+	std::cout << "define copy constructor\n";
 	return;
 }
 

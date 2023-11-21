@@ -6,13 +6,15 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:55:30 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 01:25:07 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:49:24 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
 int main()
@@ -20,10 +22,28 @@ int main()
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
+	const WrongAnimal* wrong = new WrongCat();
+
+	std::cout << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
+	std::cout << j->getType() << " " << std::endl;
 	j->makeSound();
+	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
+	std::cout << std::endl;
+	
+	std::cout << wrong->getType() << " " << std::endl;
+	wrong->makeSound();
+
+	std::cout << std::endl;
+	delete meta;
+	meta = NULL;
+	delete j;
+	j = NULL;
+	delete i;
+	i = NULL;
+	delete wrong;
+	wrong = NULL;
 	return 0;
 }

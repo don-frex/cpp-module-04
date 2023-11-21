@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 23:44:24 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 00:22:38 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:06:41 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Character::Character(void): _name("default")
 	for (int i = 0; i < 4; i++)
 	{
 		this->_inventory[i] = NULL;
-		this->floor[i] = NULL;
+		this->unequiped[i] = NULL;
 	}
 }
 
@@ -26,7 +26,7 @@ Character::Character(std::string const & name): _name(name)
 	for (int i = 0; i < 4; i++)
 	{
 		this->_inventory[i] = NULL;
-		this->floor[i] = NULL;
+		this->unequiped[i] = NULL;
 	}
 }
 
@@ -36,10 +36,10 @@ Character::Character(const Character &src): _name(src._name)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		if (this->floor[i])
-			delete this->floor[i];
+		if (this->unequiped[i])
+			delete this->unequiped[i];
 		this->_inventory[i] = src._inventory[i]->clone();
-		this->floor[i] = src.floor[i]->clone();
+		this->unequiped[i] = src.unequiped[i]->clone();
 	}
 }
 
@@ -49,8 +49,8 @@ Character::~Character()
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
-		if (this->floor[i])
-			delete this->floor[i];
+		if (this->unequiped[i])
+			delete this->unequiped[i];
 	}
 }
 
@@ -64,9 +64,9 @@ Character & Character::operator=(Character const & rhs)
 			if (this->_inventory[i])
 				delete this->_inventory[i];
 			this->_inventory[i] = rhs._inventory[i];
-			if (this->floor[i])
-				delete this->floor[i];
-			this->floor[i] = rhs.floor[i];
+			if (this->unequiped[i])
+				delete this->unequiped[i];
+			this->unequiped[i] = rhs.unequiped[i];
 		}
 	}
 	return (*this);
@@ -81,6 +81,11 @@ void Character::equip(AMateria* m)
 {
 	if (m)
 	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (this->unequiped[j])
+				delete this->unequiped[j];
+		}
 		for (int i = 0; i < 4; i++)
 		{
 			if (!this->_inventory[i])
@@ -89,11 +94,7 @@ void Character::equip(AMateria* m)
 				break;
 			}
 		}
-		for (int j = 0; j < 4; j++)
-		{
-			if (this->floor[j])
-				delete this->floor[j];
-		}	
+		delete m;
 	}
 }
 
@@ -103,9 +104,9 @@ void Character::unequip(int idx)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (!this->floor[i])
+			if (!this->unequiped[i])
 			{
-				this->floor[i] = this->_inventory[idx];
+				this->unequiped[i] = this->_inventory[idx];
 				break;
 			}
 		}

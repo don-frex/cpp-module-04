@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:51:15 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 11:45:35 by asaber           ###   ########.fr       */
+/*   Created: 2023/11/21 13:34:45 by asaber            #+#    #+#             */
+/*   Updated: 2023/11/21 13:42:55 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog(void)
+WrongAnimal::WrongAnimal(void)
 {
-	this->type = "Dog";
+	this->type = "WrongAnimal";
 	std::cout << "define " << type << " default constructor\n";
 }
 
-Dog::Dog(const Dog& other)
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
 	*this = other;
-	std::cout << "define copy constructor\n";
+	std::cout << "define WrongAnimal copy constructor\n";
 	return;
 }
 
-Dog& Dog::operator = (const Dog& other)
+WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other)
 {
 	this->type = other.type;
-	std::cout << type << "operstor called\n";
+	std::cout << type << "operator called\n";
 	return(*this);
 }
 
-Dog::~Dog(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "define deconstructor\n";
+	std::cout << "define WrongAnimal deconstructor\n";
 }
 
-void	Dog::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "howhow\n";
+	std::cout << "WrongAnimal make sound\n";
 }
 
-std::string	Dog::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
