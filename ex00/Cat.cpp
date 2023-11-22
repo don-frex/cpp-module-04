@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:54:40 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 11:45:44 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:10:44 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Cat& Cat::operator = (const Cat& other)
 
 Cat::~Cat(void)
 {
-	std::cout << "define deconstructor\n";
+	std::cout << "define Cat deconstructor\n";
 }
 
 void	Cat::makeSound(void) const

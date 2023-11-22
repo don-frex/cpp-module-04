@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:54:40 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 11:47:22 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:12:41 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ Cat::Cat(const Cat& other)
 
 Cat& Cat::operator = (const Cat& other)
 {
+ 	delete this->brain;
 	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 	std::cout << type << "operstor called\n";
 	return(*this);
 }
@@ -36,7 +38,7 @@ Cat& Cat::operator = (const Cat& other)
 Cat::~Cat(void)
 {
 	delete this->brain;
-	std::cout << "define deconstructor\n";
+	std::cout << "define Cat deconstructor\n";
 }
 
 void	Cat::makeSound(void) const

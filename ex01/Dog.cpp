@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:51:15 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/21 11:47:30 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:13:09 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ Dog::Dog(const Dog& other)
 
 Dog& Dog::operator = (const Dog& other)
 {
+	delete this->brain;
 	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 	std::cout << type << "operstor called\n";
 	return(*this);
 }
@@ -36,7 +38,7 @@ Dog& Dog::operator = (const Dog& other)
 Dog::~Dog(void)
 {
 	delete this->brain;
-	std::cout << "define deconstructor\n";
+	std::cout << "define Dog deconstructor\n";
 }
 
 void	Dog::makeSound(void) const

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:04:41 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/18 19:18:17 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:15:43 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal& Animal::operator = (const Animal& other)
 
 Animal::~Animal(void)
 {
-	std::cout << "define deconstructor\n";
+	std::cout << "define Animal deconstructor\n";
 }
 
 void	Animal::makeSound(void) const
